@@ -1,5 +1,6 @@
 import wmi
 import os
+from tkinter import *
 
 def find_files(directory, extension):
     # Знаходить файли з конкретним розширенням.
@@ -27,7 +28,10 @@ def update_driver(driver_path):
 
 
 if __name__ == "__main__":
-
+    prog = Tk()
+    photo=PhotoImage(file='logo.png')
+    prog.iconphoto(False, photo)
+    
     # Отримати список пристроїв
     devices = wmi.WMI().Win32_PnPEntity()
     directory = 'C:\\Windows\\INF\\'
